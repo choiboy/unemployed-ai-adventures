@@ -5,6 +5,9 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // 👇 This line tells Vite your site lives at /unemployed-ai-adventures/
+  base: "/unemployed-ai-adventures/",
+
   server: {
     host: "::",
     port: 8080,
