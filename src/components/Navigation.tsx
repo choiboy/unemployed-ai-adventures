@@ -27,18 +27,25 @@ const Navigation = () => {
               Blog
             </NavLink>
             <NavLink
+              to="/newsletter"
+              className="text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-medium"
+            >
+              Newsletter
+            </NavLink>
+            <NavLink
+              to="/portfolio"
+              className="text-foreground hover:text-primary transition-colors"
+              activeClassName="text-primary font-medium"
+            >
+              Portfolio
+            </NavLink>
+            <NavLink
               to="/about"
               className="text-foreground hover:text-primary transition-colors"
               activeClassName="text-primary font-medium"
             >
               About
-            </NavLink>
-            <NavLink
-              to="/categories"
-              className="text-foreground hover:text-primary transition-colors"
-              activeClassName="text-primary font-medium"
-            >
-              Categories
             </NavLink>
           </div>
 
@@ -66,20 +73,28 @@ const Navigation = () => {
                 Blog
               </NavLink>
               <NavLink
+                to="/newsletter"
+                className="text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Newsletter
+              </NavLink>
+              <NavLink
+                to="/portfolio"
+                className="text-foreground hover:text-primary transition-colors"
+                activeClassName="text-primary font-medium"
+                onClick={() => setIsOpen(false)}
+              >
+                Portfolio
+              </NavLink>
+              <NavLink
                 to="/about"
                 className="text-foreground hover:text-primary transition-colors"
                 activeClassName="text-primary font-medium"
                 onClick={() => setIsOpen(false)}
               >
                 About
-              </NavLink>
-              <NavLink
-                to="/categories"
-                className="text-foreground hover:text-primary transition-colors"
-                activeClassName="text-primary font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                Categories
               </NavLink>
             </div>
           </div>

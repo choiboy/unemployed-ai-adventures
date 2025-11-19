@@ -1,7 +1,10 @@
 import Navigation from "@/components/Navigation";
 import BlogCard from "@/components/BlogCard";
+import NewsletterSignup from "@/components/NewsletterSignup";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowRight, Calendar, Briefcase } from "lucide-react";
+import { Link } from "react-router-dom";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const Index = () => {
@@ -62,17 +65,73 @@ const Index = () => {
               Documenting my journey of self-discovery, learning AI tools, and building new skills during an unexpected career transition.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-                Read My Story
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Explore AI Tools
-              </Button>
+              <Link to="/newsletter">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                  Read Weekly Updates
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/portfolio">
+                <Button size="lg" variant="outline">
+                  View AI Projects
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Quick Links Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Newsletter Card */}
+            <Link to="/newsletter">
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <Calendar className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">Weekly Newsletter</CardTitle>
+                  <CardDescription className="text-base">
+                    Honest weekly updates about my unemployment journey, AI experiments, and lessons learned.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="ghost" className="group">
+                    Read Latest Issue
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+
+            {/* Portfolio Card */}
+            <Link to="/portfolio">
+              <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer border-2 hover:border-primary">
+                <CardHeader>
+                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4">
+                    <Briefcase className="h-6 w-6 text-primary" />
+                  </div>
+                  <CardTitle className="text-2xl">AI Projects Portfolio</CardTitle>
+                  <CardDescription className="text-base">
+                    Hands-on projects and experiments I'm building while learning AI tools and workflows.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Button variant="ghost" className="group">
+                    View All Projects
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <NewsletterSignup />
 
       {/* Blog Posts Grid */}
       <section className="py-16 md:py-24">
